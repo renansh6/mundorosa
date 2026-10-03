@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}</style>
+<title>Mundo Rosa Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Dancing+Script:wght@600;700&display=swap">
+<style>
+/* Layout: coluna única centralizada de 560px, igual ao modelo; visual rosa de tema único */
+:root{
+  --bg:#fdeef5; --bg2:#fff6fa; --card:#ffffff; --pink:#e6187f; --pink2:#f0479b;
+  --pinkSoft:#ffe1ef; --ink:#2a1420; --muted:#7a6170; --line:#f4cfe0; --gold:#e8a23a; --goldSoft:#fff3dc;
+  --display:"Poppins",system-ui,sans-serif; --script:"Dancing Script","Brush Script MT",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:linear-gradient(180deg,var(--pinkSoft),var(--bg) 30%,var(--bg2));color:var(--ink);font-family:var(--display);font-size:14px;line-height:1.5}
+.wrap{max-width:560px;margin:0 auto;padding-inline:16px;padding-block:0 32px;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+.hl{color:var(--pink);font-weight:700}
+.hr{height:1px;background:var(--line);border:0;margin:0}
+
+/* HERO */
+.hero{border-radius:0 0 22px 22px;overflow:hidden;background:radial-gradient(circle at 80% 20%,#ff9fd0,transparent 45%),linear-gradient(135deg,#ff5fae,#e6187f 55%,#b80f68);padding:34px 22px 30px;position:relative;box-shadow:0 14px 34px rgba(230,24,127,.3);color:#fff;text-align:left}
+.hero .t1{font-weight:900;font-size:clamp(34px,9vw,50px);line-height:.95;text-shadow:0 3px 0 #9d0a57,0 6px 14px rgba(0,0,0,.25);letter-spacing:-1px}
+.hero .t2{display:inline-block;margin-top:6px;background:#fff;color:var(--pink);font-weight:800;font-size:15px;padding:3px 12px;border-radius:8px;transform:rotate(-2deg)}
+.hero .t3{font-family:var(--script);font-size:clamp(46px,13vw,72px);line-height:1;margin-top:4px;text-shadow:0 3px 0 #9d0a57}
+.hero .t4{display:inline-block;margin-top:6px;background:var(--pink);border:2px solid #fff;font-weight:800;font-size:18px;padding:2px 14px;border-radius:10px}
+.hero svg.deco{position:absolute;right:-10px;bottom:-10px;width:46%;opacity:.95}
+.intro{text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center;margin-top:-10px}
+.pill{display:inline-flex;gap:6px;align-items:center;background:#fff;border-radius:999px;padding:5px 14px;font-size:11.5px;font-weight:600;box-shadow:0 2px 8px rgba(230,24,127,.12)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--pink)}
+
+/* OFFER CARD */
+.offer{background:var(--card);border:2px solid var(--pink);border-radius:18px;padding:22px 14px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;box-shadow:0 10px 30px rgba(230,24,127,.12)}
+.script{font-family:var(--script);color:var(--pink);font-size:30px;line-height:1}
+.badge{background:var(--goldSoft);color:#a8691a;border:1px solid #f5dcae;font-size:10.5px;font-weight:600;padding:3px 12px;border-radius:999px}
+.offer h3{font-size:14px;font-weight:800;max-width:300px;text-transform:uppercase}
+.small{font-size:10.5px;color:var(--pink);font-weight:600}
+.rail{display:flex;gap:8px;overflow-x:auto;width:100%;padding:4px 2px 10px;scroll-snap-type:x mandatory}
+.rail::-webkit-scrollbar{height:4px}.rail::-webkit-scrollbar-thumb{background:#ccc;border-radius:4px}
+.tile{flex:0 0 74px;aspect-ratio:2/3;border-radius:8px;scroll-snap-align:start;display:flex;align-items:flex-end;justify-content:center;padding:6px;color:#fff;font-size:9px;font-weight:700;text-align:center;box-shadow:0 3px 8px rgba(0,0,0,.12);position:relative;overflow:hidden}
+.tile svg{position:absolute;top:14%;left:50%;transform:translateX(-50%);width:60%}
+.tag{background:var(--pink);color:#fff;font-size:10px;font-weight:700;padding:2px 10px;border-radius:999px}
+.old{color:var(--gold);font-size:12px;font-weight:600}.old s{opacity:.9}
+.por{font-size:11px;color:var(--muted)}
+.price{color:var(--pink);font-weight:800;line-height:1;display:flex;align-items:flex-start;gap:3px}
+.price small{font-size:18px;margin-top:6px}.price b{font-size:52px;font-weight:800;letter-spacing:-1px}
+.cta{display:block;width:100%;background:linear-gradient(180deg,var(--pink2),var(--pink));color:#fff;text-decoration:none;font-weight:800;font-size:14px;padding:17px 12px;border-radius:12px;box-shadow:0 8px 20px rgba(230,24,127,.35);text-transform:uppercase;animation:pulse 2.2s ease-in-out infinite}
+.cta:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+@keyframes pulse{50%{transform:scale(1.025)}}
+@media (prefers-reduced-motion:reduce){.cta{animation:none}}
+.safe{font-size:10.5px;color:var(--muted);line-height:1.6}
+.note{text-align:center;font-size:11.5px;color:var(--muted);margin-top:-14px;padding-inline:20px}
+
+/* BENEFITS */
+.sec{display:flex;flex-direction:column;gap:10px}
+.sec-h{text-align:center;display:flex;flex-direction:column;gap:4px}
+.sec-h h2{color:var(--pink);font-size:19px;font-weight:800}
+.sec-h p{font-size:13px;color:var(--muted)}
+.list{display:flex;flex-direction:column;gap:7px;list-style:none;margin:0;padding:0}
+.list li{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:12px}
+.list li span:first-child{flex:0 0 auto;font-size:15px}
+.list li.bonus{background:var(--goldSoft);border-color:#f5dcae}
+.bt{background:var(--gold);color:#fff;font-size:9px;font-weight:800;padding:1px 6px;border-radius:4px;margin-right:4px}
+
+/* TESTIMONIALS */
+.rev{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;box-shadow:0 4px 14px rgba(230,24,127,.07)}
+.who{display:flex;gap:10px;align-items:center}
+.av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--pink2),#b04de0);color:#fff;font-weight:700;font-size:12px;display:grid;place-items:center;flex:0 0 auto}
+.who b{font-size:13px;display:block}.who small{color:var(--muted);font-size:10.5px}
+.stars{color:var(--gold);font-size:11px;letter-spacing:1px}
+.rev p{font-size:12.5px}
+.ph{border-style:dashed;border-color:var(--pink2)}
+.ph p{color:var(--muted);font-style:italic}
+
+/* PITCH + DEVICES */
+.pitch{text-align:center;display:flex;flex-direction:column;gap:10px}
+.pitch h2{font-size:17px;font-weight:800}
+.pitch p{font-size:13px;color:var(--muted)}
+.dev{text-align:center;display:flex;flex-direction:column;gap:10px;font-size:11px;color:var(--muted)}
+.dev-row{display:flex;justify-content:center;gap:28px}
+.dev-row div{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px}
+.dev-row svg{width:28px;height:28px;stroke:var(--pink);fill:none;stroke-width:1.6}
+.miss{color:var(--pink);font-weight:800;font-size:15px;text-align:center;margin-bottom:-18px}
+
+/* FOOTER */
+.foot{text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center}
+.secure{display:flex;gap:10px;align-items:center;font-size:11.5px;font-weight:700}
+.mp{background:#009ee3;color:#fff;font-size:10.5px;padding:4px 12px;border-radius:999px;font-weight:600}
+.foot .script{font-size:26px}
+.foot p{font-size:11.5px;color:var(--muted);max-width:420px}
+.help{display:inline-flex;gap:6px;align-items:center;background:var(--pinkSoft);color:var(--pink);font-weight:700;font-size:12px;padding:9px 18px;border-radius:999px;text-decoration:none;border:1px solid var(--line)}
+
+/* FUNDO EM VÍDEO */
+html,body{background:#0d1530}
+.wrap{position:relative;z-index:2}
+.bgv{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
+.bgo{position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(13,21,48,.35),rgba(13,21,48,.6) 40%,rgba(13,21,48,.75))}
+.intro p,.note,.sec-h p,.pitch p,.dev,.foot p{color:#f3e6f0}
+.pitch h2,.secure{color:#fff}
+.sec-h h2,.miss,.foot .script{color:#ff8cc6}
+.hr{background:rgba(255,255,255,.25)}
+.dev-row svg{stroke:#ff8cc6}
+.intro p,.sec-h,.pitch,.dev,.foot,.note,.miss{text-shadow:0 1px 6px rgba(0,0,0,.55)}
+@media (prefers-reduced-motion:reduce){.bgv{display:none}}
+</style>
+</head>
+<body>
+<video class="bgv" autoplay muted loop playsinline aria-hidden="true" src="fundo.mp4" preload="auto"></video>
+<div class="bgo"></div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="t1">O MAIOR</div>
+    <div class="t2">KIT DE DESENHOS</div>
+    <div class="t3">Mundo Rosa</div>
+    <div class="t4">DO BRASIL</div>
+    <svg class="deco" viewBox="0 0 200 200" aria-hidden="true">
+      <g fill="#fff" opacity=".9">
+        <path d="M150 40l6 14 15 2-11 10 3 15-13-8-13 8 3-15-11-10 15-2z"/>
+        <path d="M60 120l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z" opacity=".7"/>
+      </g>
+      <path d="M120 170c-30-20-48-38-48-58 0-14 11-24 24-24 9 0 17 5 24 13 7-8 15-13 24-13 13 0 24 10 24 24 0 20-18 38-48 58z" fill="#ffd1e7" stroke="#fff" stroke-width="4"/>
+      <rect x="20" y="40" width="14" height="90" rx="4" transform="rotate(-25 27 85)" fill="#ffe14d" stroke="#fff" stroke-width="3"/>
+    </svg>
+  </header>
+
+  <div class="intro">
+    <p>Agora sua pequena pode desenhar e colorir com <span class="hl">centenas de desenhos exclusivos</span>, prontos para imprimir, em alta qualidade! 💖</p>
+    <span class="pill"><span class="dot"></span> Acesso liberado na hora pelo WhatsApp</span>
+  </div>
+
+  <hr class="hr">
+
+  <section class="offer" id="oferta">
+    <div class="script">Oferta Exclusiva</div>
+    <span class="badge">🔥 Valor promocional de lançamento, por tempo limitado</span>
+    <h3>O maior kit de desenhos para colorir, num lugar só</h3>
+    <div class="small">Alguns dos que te esperam:</div>
+    <div class="rail" id="rail"></div>
+    <span class="tag">+200 desenhos no kit</span>
+    <div class="old">De: <s>R$59,90</s></div>
+    <div class="por">Por apenas</div>
+    <div class="price"><small>R$</small><b>6,90</b></div>
+    <a class="cta" href="#CHECKOUT">Quero meu kit agora 🎀</a>
+    <div class="safe">🔒 Compra 100% segura · PIX na hora<br>💖 7 dias de garantia, risco zero</div>
+  </section>
+  <p class="note">Esse é apenas um valor simbólico para nos ajudar a manter tudo no ar e com qualidade para você! 💖</p>
+
+  <hr class="hr">
+
+  <section class="sec">
+    <div class="sec-h">
+      <h2>👑 Você recebe imediatamente tudo isso:</h2>
+      <p>📩 Assim que o acesso for liberado, tudo isso é seu no WhatsApp:</p>
+    </div>
+    <ul class="list">
+      <li><span>✅</span><span>Kit com <b class="hl">+200 desenhos exclusivos</b> para imprimir</span></li>
+      <li><span>👑</span><span><b class="hl">Coleção Princesas e Castelos</b>: vestidos, coroas, carruagens e muito mais</span></li>
+      <li><span>🧚</span><span><b class="hl">Coleção Fadas e Sereias</b>: mundos mágicos para colorir</span></li>
+      <li><span>🐶</span><span><b class="hl">Coleção Bichinhos Fofos</b>: pets, unicórnios e animais da fazenda</span></li>
+      <li><span>🎨</span><span><b class="hl">Atividades extras</b>: ligue os pontos, labirintos e caça-palavras</span></li>
+      <li><span>🖨️</span><span>Arquivos em <b class="hl">PDF alta resolução</b>, prontos para imprimir em A4</span></li>
+      <li><span>😊</span><span>Organizado por tema, <b class="hl">fácil de achar cada desenho</b></span></li>
+      <li><span>💬</span><span><b class="hl">Acesso imediato</b> liberado direto no seu WhatsApp</span></li>
+      <li><span>♾️</span><span><b class="hl">Acesso 100% vitalício</b>: pague uma vez, é seu pra sempre</span></li>
+      <li><span>🆕</span><span><b class="hl">Novos desenhos adicionados sempre</b>, sem pagar nada a mais</span></li>
+      <li class="bonus"><span>🎁</span><span><span class="bt">BÔNUS</span><b class="hl">Calendário de atividades</b> para imprimir</span></li>
+    </ul>
+  </section>
+
+  <hr class="hr">
+
+  <section class="sec">
+    <div class="sec-h">
+      <h2>💬 Acompanhe o feedback de quem já garantiu</h2>
+      <p>Veja o que nossas clientes estão dizendo sobre o kit 💞</p>
+    </div>
+    <!-- TROQUE pelos depoimentos reais dos seus clientes (nome, foto/iniciais e texto) -->
+    <article class="rev ph"><div class="who"><span class="av">AA</span><div><b>Nome da cliente</b><small>· Via Instagram</small></div></div><div class="stars">★★★★★</div><p>Cole aqui o depoimento real de uma cliente.</p></article>
+    <article class="rev ph"><div class="who"><span class="av">BB</span><div><b>Nome da cliente</b><small>· Via WhatsApp</small></div></div><div class="stars">★★★★★</div><p>Cole aqui o depoimento real de uma cliente.</p></article>
+    <article class="rev ph"><div class="who"><span class="av">CC</span><div><b>Nome da cliente</b><small>· Via Instagram</small></div></div><div class="stars">★★★★★</div><p>Cole aqui o depoimento real de uma cliente.</p></article>
+  </section>
+
+  <hr class="hr">
+
+  <section class="pitch">
+    <h2>Sabemos como é difícil encontrar desenhos bonitos e bem feitos para imprimir na internet...</h2>
+    <p>Por esse motivo criamos esse kit. Reunimos centenas de desenhos exclusivos, em alta qualidade e organizados por tema, para sua pequena colorir sempre que quiser 💖</p>
+  </section>
+
+  <hr class="hr">
+
+  <section class="dev">
+    <span>Acesse em qualquer aparelho</span>
+    <div class="dev-row">
+      <div><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Celular</div>
+      <div><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 19h20"/></svg>Notebook</div>
+      <div><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>Impressora</div>
+    </div>
+  </section>
+
+  <p class="miss">Não perca essa oferta 💖</p>
+  <section class="offer">
+    <div class="script">Última chamada</div>
+    <h3>Garanta o kit da sua pequena ainda hoje</h3>
+    <div class="old">De: <s>R$59,90</s></div>
+    <div class="por">Por apenas</div>
+    <div class="price"><small>R$</small><b>6,90</b></div>
+    <a class="cta" href="#CHECKOUT">Garantir meu acesso agora 🎀</a>
+    <div class="safe">🔒 Compra 100% segura · 💖 7 dias de garantia incondicional</div>
+  </section>
+
+  <hr class="hr">
+
+  <footer class="foot">
+    <div class="secure">COMPRA 100% SEGURA <span class="mp">🤝 mercado pago</span></div>
+    <div class="script">7 Dias de garantia incondicional</div>
+    <p>Caso decida que não valeu a pena, você pode pedir um reembolso em até 7 dias depois da compra e receber 100% do seu investimento de volta, sem perguntas ou burocracias.</p>
+    <hr class="hr" style="width:100%">
+    <p>Tem alguma dúvida? A gente te ajuda 💖</p>
+    <a class="help" href="#WHATSAPP">💬 Falar com a gente</a>
+  </footer>
+</div>
+
+<script>
+const bv=document.querySelector(".bgv");if(bv){bv.muted=true;const pl=()=>bv.play().catch(()=>{});pl();document.addEventListener("pointerdown",pl,{once:true});}
+const tiles=[
+  ["Princesas","#f472b6","#be185d","M12 3l2 4 4-2-1 6H7L6 5l4 2z"],
+  ["Fadas","#c084fc","#7e22ce","M12 4c3 3 6 3 8 2-1 4-4 6-8 6s-7-2-8-6c2 1 5 1 8-2z"],
+  ["Sereias","#38bdf8","#0369a1","M12 3c4 4 4 9 0 13-4-4-4-9 0-13zM8 20l4-4 4 4"],
+  ["Unicórnios","#fb7185","#9f1239","M6 18c0-6 4-10 10-10l3-5-1 6c1 2 1 5-1 7z"],
+  ["Bichinhos","#fbbf24","#b45309","M7 9a2 2 0 110-4 2 2 0 010 4zm10 0a2 2 0 110-4 2 2 0 010 4zM6 16c0-4 3-6 6-6s6 2 6 6-3 4-6 4-6 0-6-4z"],
+  ["Castelos","#a78bfa","#5b21b6","M4 21V9l2-2 2 2v3h2V6l2-3 2 3v6h2V9l2-2 2 2v12z"],
+  ["Flores","#f9a8d4","#db2777","M12 8a3 3 0 100 6 3 3 0 000-6zM12 2v5M12 15v7M5 11h5M14 11h5"]
+];
+document.getElementById("rail").innerHTML=tiles.map(([n,a,b,d])=>
+  `<div class="tile" style="background:linear-gradient(160deg,${a},${b})"><svg viewBox="0 0 24 24" fill="#fff" fill-opacity=".9" stroke="#fff" stroke-width=".5"><path d="${d}"/></svg>${n}</div>`).join("");
+</script>
+
+</body>
+</html>
